@@ -41,15 +41,15 @@
 
 ### 필수 기술
 
-| 분류            | 기술                                   |
-| --------------- | -------------------------------------- |
-| **Framework**   | Next.js 15.5.3 (App Router)            |
-| **Runtime**     | React 19 + TypeScript 5                |
-| **Styling**     | TailwindCSS v4 + shadcn/ui (new-york)  |
-| **API 연동**    | Notion API (`@notionhq/client`)        |
-| **PDF 생성**    | html2pdf.js (클라이언트 사이드)        |
-| **아이콘**      | Lucide React                           |
-| **개발 도구**   | ESLint + Prettier + Husky + lint-staged |
+| 분류          | 기술                                    |
+| ------------- | --------------------------------------- |
+| **Framework** | Next.js 15.5.3 (App Router)             |
+| **Runtime**   | React 19 + TypeScript 5                 |
+| **Styling**   | TailwindCSS v4 + shadcn/ui (new-york)   |
+| **API 연동**  | Notion API (`@notionhq/client`)         |
+| **PDF 생성**  | html2pdf.js (클라이언트 사이드)         |
+| **아이콘**    | Lucide React                            |
+| **개발 도구** | ESLint + Prettier + Husky + lint-staged |
 
 ### 환경 변수
 
@@ -71,32 +71,32 @@ NEXT_PUBLIC_APP_URL=https://your-domain.com
 
 #### 견적서 (Quotes) 테이블
 
-| 속성명             | 노션 타입    | 설명                                      |
-| ------------------ | ------------ | ----------------------------------------- |
-| `Quote Number`     | title        | 견적서 번호 (예: Q-2024-001)              |
-| `UUID`             | rich_text    | 공개 링크용 고유 식별자                   |
-| `Customer Name`    | rich_text    | 고객명/회사명                             |
-| `Customer Email`   | email        | 고객 이메일                               |
-| `Issue Date`       | date         | 발행일                                    |
-| `Valid Until`      | date         | 유효기간                                  |
-| `Status`           | select       | 상태 (작성중/발송완료/승인/거절)          |
-| `Total Amount`     | rollup       | 총 금액 (Items의 Amount 합계)             |
-| `Items`            | relation     | 견적 항목 (Quote Items 테이블 연결)       |
-| `Notes`            | rich_text    | 비고/특이사항                             |
-| `Company Name`     | rich_text    | 발행 회사명                               |
-| `Company Address`  | rich_text    | 발행 회사 주소                            |
-| `Company Contact`  | rich_text    | 발행 회사 연락처                          |
+| 속성명            | 노션 타입 | 설명                                |
+| ----------------- | --------- | ----------------------------------- |
+| `Quote Number`    | title     | 견적서 번호 (예: Q-2024-001)        |
+| `UUID`            | rich_text | 공개 링크용 고유 식별자             |
+| `Customer Name`   | rich_text | 고객명/회사명                       |
+| `Customer Email`  | email     | 고객 이메일                         |
+| `Issue Date`      | date      | 발행일                              |
+| `Valid Until`     | date      | 유효기간                            |
+| `Status`          | select    | 상태 (작성중/발송완료/승인/거절)    |
+| `Total Amount`    | rollup    | 총 금액 (Items의 Amount 합계)       |
+| `Items`           | relation  | 견적 항목 (Quote Items 테이블 연결) |
+| `Notes`           | rich_text | 비고/특이사항                       |
+| `Company Name`    | rich_text | 발행 회사명                         |
+| `Company Address` | rich_text | 발행 회사 주소                      |
+| `Company Contact` | rich_text | 발행 회사 연락처                    |
 
 #### 견적 항목 (Quote Items) 테이블
 
-| 속성명          | 노션 타입    | 설명                          |
-| --------------- | ------------ | ----------------------------- |
-| `Item Name`     | title        | 항목명                        |
-| `Description`   | rich_text    | 항목 설명                     |
-| `Unit Price`    | number       | 단가                          |
-| `Quantity`      | number       | 수량                          |
-| `Amount`        | formula      | 금액 (단가 × 수량)            |
-| `Quote`         | relation     | 연결된 견적서                 |
+| 속성명        | 노션 타입 | 설명               |
+| ------------- | --------- | ------------------ |
+| `Item Name`   | title     | 항목명             |
+| `Description` | rich_text | 항목 설명          |
+| `Unit Price`  | number    | 단가               |
+| `Quantity`    | number    | 수량               |
+| `Amount`      | formula   | 금액 (단가 × 수량) |
+| `Quote`       | relation  | 연결된 견적서      |
 
 ### TypeScript 타입 정의
 
@@ -104,34 +104,34 @@ NEXT_PUBLIC_APP_URL=https://your-domain.com
 // src/lib/types/quote.ts
 
 // 견적서 상태
-type QuoteStatus = '작성중' | '발송완료' | '승인' | '거절';
+type QuoteStatus = '작성중' | '발송완료' | '승인' | '거절'
 
 // 견적 항목
 interface IQuoteItem {
-  id: string;
-  itemName: string;
-  description: string;
-  unitPrice: number;
-  quantity: number;
-  amount: number;
+  id: string
+  itemName: string
+  description: string
+  unitPrice: number
+  quantity: number
+  amount: number
 }
 
 // 견적서
 interface IQuote {
-  id: string;
-  uuid: string;
-  quoteNumber: string;
-  customerName: string;
-  customerEmail: string;
-  issueDate: string;
-  validUntil: string;
-  status: QuoteStatus;
-  totalAmount: number;
-  items: IQuoteItem[];
-  notes: string;
-  companyName: string;
-  companyAddress: string;
-  companyContact: string;
+  id: string
+  uuid: string
+  quoteNumber: string
+  customerName: string
+  customerEmail: string
+  issueDate: string
+  validUntil: string
+  status: QuoteStatus
+  totalAmount: number
+  items: IQuoteItem[]
+  notes: string
+  companyName: string
+  companyAddress: string
+  companyContact: string
 }
 ```
 
@@ -283,9 +283,9 @@ src/
 
 ```typescript
 // src/lib/notion/queries.ts
-import { Client } from '@notionhq/client';
+import { Client } from '@notionhq/client'
 
-const notion = new Client({ auth: process.env.NOTION_API_KEY });
+const notion = new Client({ auth: process.env.NOTION_API_KEY })
 
 // UUID로 견적서 조회
 export async function getQuoteByUUID(uuid: string): Promise<IQuote | null> {
@@ -297,14 +297,14 @@ export async function getQuoteByUUID(uuid: string): Promise<IQuote | null> {
         equals: uuid,
       },
     },
-  });
+  })
 
-  if (response.results.length === 0) return null;
+  if (response.results.length === 0) return null
 
-  const page = response.results[0];
+  const page = response.results[0]
   // 데이터 변환 로직...
 
-  return transformedQuote;
+  return transformedQuote
 }
 ```
 

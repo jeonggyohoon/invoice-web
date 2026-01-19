@@ -27,22 +27,24 @@
   "hooks": {
     "Notification": [
       {
-        "matcher": "*",
+        "matcher": "",
         "hooks": [
           {
             "type": "command",
-            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/notification-hook.sh"
+            "command": "bash .claude/hooks/notification-hook.sh",
+            "timeout": 30
           }
         ]
       }
     ],
     "Stop": [
       {
-        "matcher": "*",
+        "matcher": "",
         "hooks": [
           {
             "type": "command",
-            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/stop-hook.sh"
+            "command": "bash .claude/hooks/stop-hook.sh",
+            "timeout": 30
           }
         ]
       }

@@ -1,13 +1,16 @@
 # 🤖 Claude Code 개발 지침
 
-**claude-nextjs-starters**는 Next.js 15.5.3 + React 19 기반 모던 웹 애플리케이션 스타터 템플릿입니다.
+**노션 견적서 웹 뷰어**는 노션에서 작성한 견적서를 클라이언트가 웹으로 확인하고 PDF로 다운로드 받을 수 있는 서비스입니다.
+
+상세 프로젝트 요구사항은 `@/docs/PRD.md` 참조
 
 ## 🛠️ 핵심 기술 스택
 
 - **Framework**: Next.js 15.5.3 (App Router + Turbopack)
 - **Runtime**: React 19.1.0 + TypeScript 5
 - **Styling**: TailwindCSS v4 + shadcn/ui (new-york style)
-- **Forms**: React Hook Form + Zod + Server Actions
+- **API 연동**: Notion API (`@notionhq/client`)
+- **PDF 생성**: html2pdf.js (클라이언트 사이드)
 - **UI Components**: Radix UI + Lucide Icons
 - **Development**: ESLint + Prettier + Husky + lint-staged
 
@@ -41,3 +44,8 @@ npm run build       # 빌드 성공 확인
 ```
 
 💡 **상세 규칙은 위 개발 가이드 문서들을 참조하세요**
+
+## Task Master AI Instructions
+
+**Import Task Master's development workflow commands and guidelines, treat as if import is in the main CLAUDE.md file.**
+@./.taskmaster/CLAUDE.md
