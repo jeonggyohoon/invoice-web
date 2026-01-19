@@ -1,0 +1,96 @@
+{
+  "tasks": [
+    {
+      "id": "35b10d6c-f168-4696-9bb7-9b6c37511edd",
+      "name": "동적 라우트 페이지 생성",
+      "description": "src/app/quotes/[uuid]/page.tsx 생성. Server Component로 uuid 파라미터 추출 및 더미 데이터 렌더링.",
+      "status": "completed",
+      "dependencies": [],
+      "createdAt": "2026-01-19T14:20:36.430Z",
+      "updatedAt": "2026-01-19T14:28:03.845Z",
+      "relatedFiles": [
+        {
+          "path": "src/app/quotes/[uuid]/page.tsx",
+          "type": "CREATE",
+          "description": "견적서 페이지"
+        }
+      ],
+      "implementationGuide": "1. src/app/quotes/[uuid] 디렉토리 생성. 2. page.tsx에서 params.uuid 추출 (await 필요). 3. Container로 레이아웃 구성.",
+      "verificationCriteria": "/quotes/test-uuid 접근 시 페이지 렌더링 확인",
+      "analysisResult": "Phase 1 애플리케이션 골격 구축. Next.js 15.5.3 App Router, TypeScript 5, TailwindCSS v4, shadcn/ui 사용. Container, Skeleton 컴포넌트 재사용.",
+      "summary": "동적 라우트 페이지 생성 완료. src/app/quotes/[uuid]/page.tsx를 Server Component로 구현. Next.js 15 params Promise 처리, Container 컴포넌트 재사용, 더미 데이터로 견적서 렌더링, notFound() 처리 포함. 빌드 및 타입 체크 통과.",
+      "completedAt": "2026-01-19T14:28:03.842Z"
+    },
+    {
+      "id": "fe805ac3-48ed-4da4-9e52-a58e9bb35af8",
+      "name": "로딩 스켈레톤 페이지 생성",
+      "description": "src/app/quotes/[uuid]/loading.tsx 생성. Skeleton 컴포넌트로 로딩 UI 구현.",
+      "status": "completed",
+      "dependencies": [
+        {
+          "taskId": "35b10d6c-f168-4696-9bb7-9b6c37511edd"
+        }
+      ],
+      "createdAt": "2026-01-19T14:20:36.430Z",
+      "updatedAt": "2026-01-19T14:28:58.904Z",
+      "relatedFiles": [
+        {
+          "path": "src/app/quotes/[uuid]/loading.tsx",
+          "type": "CREATE",
+          "description": "로딩 페이지"
+        }
+      ],
+      "implementationGuide": "1. loading.tsx 생성. 2. Skeleton으로 헤더, 테이블, 합계 영역 스켈레톤 배치.",
+      "verificationCriteria": "로딩 시 스켈레톤 UI 표시 확인",
+      "analysisResult": "Phase 1 애플리케이션 골격 구축. Next.js 15.5.3 App Router, TypeScript 5, TailwindCSS v4, shadcn/ui 사용. Container, Skeleton 컴포넌트 재사용.",
+      "summary": "로딩 스켈레톤 페이지 생성 완료. src/app/quotes/[uuid]/loading.tsx 구현. page.tsx 레이아웃과 일치하는 Skeleton UI 배치 - 헤더, 발행자/고객 정보, 항목 테이블(3개 행), 합계, 비고 영역 포함. 타입 체크 통과.",
+      "completedAt": "2026-01-19T14:28:58.898Z"
+    },
+    {
+      "id": "aa5e2c35-d00f-4752-a185-36beec442774",
+      "name": "404 에러 페이지 생성",
+      "description": "src/app/quotes/[uuid]/not-found.tsx 생성. 에러 메시지와 홈 링크 제공.",
+      "status": "completed",
+      "dependencies": [
+        {
+          "taskId": "35b10d6c-f168-4696-9bb7-9b6c37511edd"
+        }
+      ],
+      "createdAt": "2026-01-19T14:20:36.430Z",
+      "updatedAt": "2026-01-19T14:29:41.757Z",
+      "relatedFiles": [
+        {
+          "path": "src/app/quotes/[uuid]/not-found.tsx",
+          "type": "CREATE",
+          "description": "404 페이지"
+        }
+      ],
+      "implementationGuide": "1. not-found.tsx 생성. 2. 에러 메시지 및 홈 링크 버튼 추가.",
+      "verificationCriteria": "notFound() 호출 시 페이지 표시 확인",
+      "analysisResult": "Phase 1 애플리케이션 골격 구축. Next.js 15.5.3 App Router, TypeScript 5, TailwindCSS v4, shadcn/ui 사용. Container, Skeleton 컴포넌트 재사용.",
+      "summary": "404 에러 페이지 생성 완료. src/app/quotes/[uuid]/not-found.tsx 구현. FileQuestion 아이콘, 에러 메시지, 홈 링크 버튼 포함. Button asChild와 Link 조합 사용. 중앙 정렬 레이아웃. 타입 체크 통과.",
+      "completedAt": "2026-01-19T14:29:41.755Z"
+    },
+    {
+      "id": "4bf6eaad-adaf-4f77-8a20-7179beaa4551",
+      "name": "Notion API 응답 타입 정의",
+      "description": "src/lib/types/notion.ts 생성. Notion Property 타입 및 응답 타입 정의.",
+      "status": "completed",
+      "dependencies": [],
+      "createdAt": "2026-01-19T14:20:36.430Z",
+      "updatedAt": "2026-01-19T14:30:41.654Z",
+      "relatedFiles": [
+        {
+          "path": "src/lib/types/notion.ts",
+          "type": "CREATE",
+          "description": "Notion 타입 정의"
+        }
+      ],
+      "implementationGuide": "1. notion.ts 생성. 2. INotionRichText, INotionTitle, INotionNumber, INotionSelect, INotionRelation 타입 정의. 3. INotionQuoteProperties 타입 정의.",
+      "verificationCriteria": "TypeScript 컴파일 에러 없음",
+      "analysisResult": "Phase 1 애플리케이션 골격 구축. Next.js 15.5.3 App Router, TypeScript 5, TailwindCSS v4, shadcn/ui 사용. Container, Skeleton 컴포넌트 재사용.",
+      "summary": "Notion API 응답 타입 정의 완료. src/lib/types/notion.ts 생성. 기본 Property 타입(Title, RichText, Number, Select, Date, Email, Relation, Rollup, Formula), 견적서/항목 Properties 인터페이스, Page/Query 응답 타입 정의. PRD 스키마와 일치. 타입 체크 통과.",
+      "completedAt": "2026-01-19T14:30:41.641Z"
+    }
+  ]
+}
