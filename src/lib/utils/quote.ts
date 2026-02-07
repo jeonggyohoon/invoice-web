@@ -1,4 +1,4 @@
-import type { QuoteStatus } from '@/lib/types/quote';
+import type { QuoteStatus } from '@/lib/types/quote'
 
 /**
  * 견적서가 유효기간이 만료되었는지 확인
@@ -6,12 +6,12 @@ import type { QuoteStatus } from '@/lib/types/quote';
  * @returns 만료 여부
  */
 export function isExpired(validUntil: string): boolean {
-  const expiryDate = new Date(validUntil);
-  const today = new Date();
+  const expiryDate = new Date(validUntil)
+  const today = new Date()
   // 시간 부분을 제거하고 날짜만 비교
-  today.setHours(0, 0, 0, 0);
-  expiryDate.setHours(0, 0, 0, 0);
-  return today > expiryDate;
+  today.setHours(0, 0, 0, 0)
+  expiryDate.setHours(0, 0, 0, 0)
+  return today > expiryDate
 }
 
 /**
@@ -26,19 +26,19 @@ export function getStatusVariant(
 ): 'pending' | 'approved' | 'rejected' | 'expired' {
   // 만료된 경우 최우선
   if (expired) {
-    return 'expired';
+    return 'expired'
   }
 
   // 상태별 variant 매핑
   switch (status) {
     case '작성중':
     case '발송완료':
-      return 'pending';
+      return 'pending'
     case '승인':
-      return 'approved';
+      return 'approved'
     case '거절':
-      return 'rejected';
+      return 'rejected'
     default:
-      return 'pending';
+      return 'pending'
   }
 }

@@ -1,11 +1,11 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 interface QuotePartiesProps {
-  companyName: string;
-  companyAddress: string;
-  companyContact: string;
-  customerName: string;
-  customerEmail: string;
+  companyName: string
+  companyAddress: string
+  companyContact: string
+  customerName: string
+  customerEmail: string
 }
 
 /**
@@ -28,8 +28,8 @@ export function QuoteParties({
         </CardHeader>
         <CardContent className="space-y-1">
           <p className="font-medium">{companyName}</p>
-          <p className="text-sm text-muted-foreground">{companyAddress}</p>
-          <p className="text-sm text-muted-foreground">{companyContact}</p>
+          <p className="text-muted-foreground text-sm">{companyAddress}</p>
+          <p className="text-muted-foreground text-sm">{companyContact}</p>
         </CardContent>
       </Card>
 
@@ -40,9 +40,9 @@ export function QuoteParties({
         </CardHeader>
         <CardContent className="space-y-1">
           <p className="font-medium">{customerName}</p>
-          <p className="text-sm text-muted-foreground">{customerEmail}</p>
+          <p className="text-muted-foreground text-sm">{customerEmail}</p>
         </CardContent>
       </Card>
     </div>
-  );
+  )
 }

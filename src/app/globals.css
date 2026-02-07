@@ -123,6 +123,19 @@
 
 /* 인쇄 스타일 */
 @media print {
+  /* 인쇄 시 라이트모드 강제 */
+  html,
+  html.dark {
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.556 0 0);
+    --border: oklch(0.922 0 0);
+    color-scheme: light;
+  }
+
   /* 인쇄 시 배경색 유지 */
   * {
     -webkit-print-color-adjust: exact !important;

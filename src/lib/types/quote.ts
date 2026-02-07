@@ -28,3 +28,31 @@ export interface IQuote {
   companyAddress: string
   companyContact: string
 }
+
+// 견적서 목록용 경량 타입 (items, notes, companyAddress, companyContact 제외)
+export interface IQuoteSummary {
+  id: string
+  uuid: string
+  quoteNumber: string
+  customerName: string
+  customerEmail: string
+  status: QuoteStatus
+  totalAmount: number
+  issueDate: string
+  validUntil: string
+  companyName: string
+}
+
+// 견적서 목록 필터 옵션
+export interface IQuoteFilter {
+  status?: QuoteStatus | 'all'
+  sortBy?: 'issueDate' | 'totalAmount' | 'customerName'
+  sortOrder?: 'asc' | 'desc'
+}
+
+// 견적서 목록 API 응답
+export interface IQuoteListResponse {
+  quotes: IQuoteSummary[]
+  total: number
+  hasMore: boolean
+}

@@ -1,9 +1,9 @@
-import { Client } from '@notionhq/client';
-import { validateNotionEnv } from '@/lib/env';
+import { Client } from '@notionhq/client'
+import { validateNotionEnv } from '@/lib/env'
 
 // 싱글톤 인스턴스
-let notionClient: Client | null = null;
-let dbIds: { quotesDbId: string; quoteItemsDbId: string } | null = null;
+let notionClient: Client | null = null
+let dbIds: { quotesDbId: string; quoteItemsDbId: string } | null = null
 
 /**
  * Notion 클라이언트 인스턴스를 반환합니다.
@@ -11,10 +11,10 @@ let dbIds: { quotesDbId: string; quoteItemsDbId: string } | null = null;
  */
 export function getNotionClient(): Client {
   if (!notionClient) {
-    const { apiKey } = validateNotionEnv();
-    notionClient = new Client({ auth: apiKey });
+    const { apiKey } = validateNotionEnv()
+    notionClient = new Client({ auth: apiKey })
   }
-  return notionClient;
+  return notionClient
 }
 
 /**
@@ -22,8 +22,8 @@ export function getNotionClient(): Client {
  */
 export function getDbIds(): { quotesDbId: string; quoteItemsDbId: string } {
   if (!dbIds) {
-    const { quotesDbId, quoteItemsDbId } = validateNotionEnv();
-    dbIds = { quotesDbId, quoteItemsDbId };
+    const { quotesDbId, quoteItemsDbId } = validateNotionEnv()
+    dbIds = { quotesDbId, quoteItemsDbId }
   }
-  return dbIds;
+  return dbIds
 }

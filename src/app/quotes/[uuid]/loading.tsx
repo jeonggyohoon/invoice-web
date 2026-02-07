@@ -1,5 +1,5 @@
-import { Container } from '@/components/layout/container';
-import { Skeleton } from '@/components/ui/skeleton';
+import { Container } from '@/components/layout/container'
+import { Skeleton } from '@/components/ui/skeleton'
 
 export default function Loading() {
   return (
@@ -35,7 +35,7 @@ export default function Loading() {
           <Skeleton className="ml-4 h-4 w-20" />
         </div>
         {/* 테이블 행들 */}
-        {[1, 2, 3].map((i) => (
+        {[1, 2, 3].map(i => (
           <div key={i} className="flex items-center border-b py-3">
             <div className="flex-1 space-y-1">
               <Skeleton className="h-4 w-32" />
@@ -59,11 +59,11 @@ export default function Loading() {
       </div>
 
       {/* 비고 스켈레톤 */}
-      <div className="rounded-lg bg-muted p-4">
+      <div className="bg-muted rounded-lg p-4">
         <Skeleton className="mb-2 h-5 w-12" />
         <Skeleton className="h-4 w-full" />
         <Skeleton className="mt-1 h-4 w-3/4" />
       </div>
     </Container>
-  );
+  )
 }

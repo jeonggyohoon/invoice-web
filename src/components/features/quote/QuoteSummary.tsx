@@ -1,8 +1,8 @@
-import { formatCurrency } from '@/lib/utils';
+import { formatCurrency } from '@/lib/utils'
 
 interface QuoteSummaryProps {
-  totalAmount: number;
-  notes?: string;
+  totalAmount: number
+  notes?: string
 }
 
 /**
@@ -24,11 +24,11 @@ export function QuoteSummary({ totalAmount, notes }: QuoteSummaryProps) {
 
       {/* 비고 (있을 때만 표시) */}
       {notes && (
-        <div className="rounded-lg bg-muted p-4">
+        <div className="bg-muted rounded-lg p-4">
           <h2 className="mb-2 font-semibold">비고</h2>
-          <p className="text-sm text-muted-foreground">{notes}</p>
+          <p className="text-muted-foreground text-sm">{notes}</p>
         </div>
       )}
     </div>
-  );
+  )
 }

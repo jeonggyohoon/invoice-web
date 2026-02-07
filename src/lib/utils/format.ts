@@ -7,7 +7,7 @@ export function formatCurrency(amount: number): string {
   return new Intl.NumberFormat('ko-KR', {
     style: 'currency',
     currency: 'KRW',
-  }).format(amount);
+  }).format(amount)
 }
 
 /**
@@ -16,10 +16,10 @@ export function formatCurrency(amount: number): string {
  * @returns 포맷팅된 날짜 문자열 (예: '2024년 1월 15일')
  */
 export function formatDate(dateString: string): string {
-  const date = new Date(dateString);
+  const date = new Date(dateString)
   return new Intl.DateTimeFormat('ko-KR', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
-  }).format(date);
+  }).format(date)
 }

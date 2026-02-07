@@ -15,6 +15,9 @@ const envSchema = z.object({
   // 앱 설정
   NEXT_PUBLIC_APP_URL: z.string().url().optional(),
   VERCEL_URL: z.string().optional(),
+
+  // 관리자 인증
+  ADMIN_PASSWORD: z.string().optional(),
 })
 
 export const env = envSchema.parse({
@@ -24,9 +27,20 @@ export const env = envSchema.parse({
   NOTION_QUOTE_ITEMS_DB_ID: process.env.NOTION_QUOTE_ITEMS_DB_ID,
   NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
   VERCEL_URL: process.env.VERCEL_URL,
+  ADMIN_PASSWORD: process.env.ADMIN_PASSWORD,
 })
 
 export type Env = z.infer<typeof envSchema>
+
+// 관리자 환경 변수 검증 헬퍼 (런타임에서 사용)
+export function validateAdminEnv() {
+  if (!env.ADMIN_PASSWORD) {
+    throw new Error('ADMIN_PASSWORD 환경 변수가 설정되지 않았습니다.')
+  }
+  return {
+    adminPassword: env.ADMIN_PASSWORD,
+  }
+}
 
 // Notion API 환경 변수 검증 헬퍼 (런타임에서 사용)
 export function validateNotionEnv() {

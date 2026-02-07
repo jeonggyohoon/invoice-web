@@ -5,12 +5,12 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@/components/ui/table';
-import { formatCurrency } from '@/lib/utils';
-import type { IQuoteItem } from '@/lib/types/quote';
+} from '@/components/ui/table'
+import { formatCurrency } from '@/lib/utils'
+import type { IQuoteItem } from '@/lib/types/quote'
 
 interface QuoteItemsProps {
-  items: IQuoteItem[];
+  items: IQuoteItem[]
 }
 
 /**
@@ -30,12 +30,12 @@ export function QuoteItems({ items }: QuoteItemsProps) {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {items.map((item) => (
+          {items.map(item => (
             <TableRow key={item.id}>
               <TableCell>
                 <div className="space-y-1">
                   <p className="font-medium">{item.itemName}</p>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-muted-foreground text-sm">
                     {item.description}
                   </p>
                 </div>
@@ -52,5 +52,5 @@ export function QuoteItems({ items }: QuoteItemsProps) {
         </TableBody>
       </Table>
     </div>
-  );
+  )
 }
