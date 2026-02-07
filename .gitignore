@@ -64,4 +64,13 @@ node_modules/
 
 # Task files
 # tasks.json
-# tasks/ 
+# tasks/
+
+# Playwright MCP artifacts
+.playwright-mcp/
+
+# Shrimp Task Manager data
+shrimp_data/
+
+# Test screenshots
+*.png
